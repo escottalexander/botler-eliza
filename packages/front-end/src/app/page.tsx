@@ -11,6 +11,16 @@ export default function Home() {
   const [inputText, setInputText] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
   
+  useEffect(() => {
+    const hasVisited = sessionStorage.getItem('hasVisitedBefore');
+    const initialMessage = hasVisited
+      ? "Welcome back! How can I help you explore the Ethereum ecosystem today?"
+      : "I am Botler, here to help you learn about and interact with the Ethereum ecosystem. What do you want to explore?";
+    
+    setMessages([{ text: initialMessage, sender: 'agent' }]);
+    sessionStorage.setItem('hasVisitedBefore', 'true');
+  }, []);
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
