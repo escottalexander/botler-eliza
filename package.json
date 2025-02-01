@@ -1,0 +1,27 @@
+{
+  "name": "botler",
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": "23.3.0"
+  },
+  "packageManager": "pnpm@9.15.4",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:agent": "pnpm --filter agent build",
+    "build:front-end": "pnpm --filter front-end build",
+    "start:agent": "pnpm --filter agent start",
+    "start:front-end": "pnpm --filter front-end start",
+    "dev:front-end": "pnpm --filter front-end dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "pnpm": {
+    "overrides": {
+      "onnxruntime-node": "1.20.0"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
